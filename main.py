@@ -14,18 +14,18 @@ class CustomerManager:
 
     
 
-    # def add_purchase(self, name, purchase):
-    #     self.add_customer(name, [purchase])
-
-    # def add_purchases(self, name, purchases):
-    #     self.add_customer(name, purchases)
-
-
     def add_purchase(self, name, purchase):
-        if purchase is list:
-            self.add_customer(name, [purchase])
-        else:
-            self.add_customer(name, purchase)
+        self.add_customer(name, [purchase])
+
+    def add_purchases(self, name, purchases):
+        self.add_customer(name, purchases)
+
+
+    # def add_purchase(self, name, purchase):
+    #     if purchase is list:
+    #         self.add_customer(name, [purchase])
+    #     else:
+    #         self.add_customer(name, purchase)
 
 
 
@@ -33,7 +33,7 @@ class CustomerManager:
         for y, x in self.customers.items():
             a = 0
             for z in x:
-                a += self.__add_tax(z)
+                a += self.__add_tax(z['price'])
 
             print(y)
 
@@ -45,7 +45,7 @@ class CustomerManager:
                 print("Potential future discount customer")
             else:
                 print("No discount")
-                
+
             if a > 1000:
                 print("VIP Customer!")
             else:
