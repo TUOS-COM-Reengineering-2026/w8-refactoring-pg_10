@@ -1,0 +1,12 @@
+Oliver Smith (Refactored using the techniques suggested and wrote the mini report)
+
+
+
+
+
+
+1. Extract Variable: Added a private '__add_tax()' method to return a value with the self.tax_threshold added to it insteaad of having this buried in another function. I know the oservalbebehaviour has not changed as I have created a new function that replaces a code block in one specific place. The test results also do not change. The benefit of creating this function is that it improves readability for the 'generate_report' methdod, and also cretes a reusable method that can be used elsehere in the code.
+
+2. Parameterise Funuction: Updated the 'add_purchase()' method so that it now accepts both lists and single elements, effectivley combibnining both the 'add_purchase' and 'add_purchases' functions into one. I know the fnuction has not changed as the tests still run correctly afterwards (I also teseted it by hand as I wanted to focus on refactoring rather than writing tests)
+
+3. Inline Variable: Moved and simplified a complex if tree in the 'generate_report' function to improve readability and make the code simpler. 
